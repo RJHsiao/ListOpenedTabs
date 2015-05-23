@@ -1,6 +1,24 @@
+![Promotion Image](/promo.png)
 # List Opened Tabs
 "List Opened Tabs" is a Google Chrome extension.  
 You can list, search, rearrange, close tabs and switch to another tab with this extension.
+
+## How To Install
+"List Opened Tabs" is already published to Google Chrome Web Store.  
+You can ONLY install from [HERE](https://chrome.google.com/webstore/detail/list-opened-tabs/nkaliaagdnbgadcpnkdbmnigkalbihlb) because of the new Google Chrome extension policy.
+
+## Snapshot
+### List Tabs
+![List Tabs](/snapshot/list_tabs.png)
+
+### Search Tabs
+![Search Tabs](/snapshot/search_tabs.png)
+
+### Rearrange a Tab
+![Rearrange a Tab](/snapshot/rearrange_tab.png)
+
+### Close a Tabs
+![Close a Tabs](/snapshot/close_tab.png)
 
 ## License
 "List Opened Tabs" is released under the GPLv3.
