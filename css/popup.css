@@ -1,0 +1,149 @@
+div, img {
+	-webkit-user-select: none;
+}
+
+body {
+	margin: 0px;
+	max-width: 288px;
+	overflow-x: hidden;
+	font: 12px 'Noto Sans' ,'lucida grande', helvetica, arial, sans-serif;
+}
+
+#main {
+	width: 288px;
+}
+
+#search {
+	width: 284px;
+	border: 1px solid #abc;
+	padding: 2px 1px;
+	margin-bottom: 1px;
+}
+
+#search:focus {
+	outline: 2px solid #adf;
+	-webkit-box-shadow: 0 0 3px #adf;
+}
+
+.item {
+	width: 286px;
+	float: left;
+	clear: both;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid #fff;
+	border-radius: 2px;
+	-webkit-transition: .2s ease-out;
+	-webkit-transition-property: background-color, border-color;
+}
+
+.item:hover, .item:focus {
+	background: #39f;
+	border-color: #39f;
+	outline: 0;
+}
+
+.item:active {
+	border-color: #69f;
+}
+
+.selected {
+	background: rgba(0, 127, 255, 0.9) !important;
+	border-color: rgba(0, 127, 255, 0.9) !important;
+	color: #fff !important;
+}
+
+.selected:hover, .selected:focus {
+	background: #06f !important;
+	border-color: #06f !important;
+}
+
+img {
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin: 0 5px;
+}
+
+.title {
+	float: left;
+	width: 260px;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.close {
+	float: left;
+	text-align: center;
+	width: 12px;
+	font: bold 12px verdana, sans-serif;
+	margin-top: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 1px;
+	display: none;
+	border-radius: 12px;
+}
+
+.item .close {
+	color: #567;
+}
+
+.item .close:hover {
+	color: #000;
+	background-color: #06f;
+}
+
+.selected .title {
+	font-weight: bold;
+}
+
+.selected .close {
+	color: #def;
+}
+
+.selected .close:hover {
+	color: #06f;
+	background-color: #fff
+}
+
+.item:hover .title {
+	width: 242px;
+}
+.item:hover .close {
+	display: block;
+}
+
+.overflow #search {
+	width: 282px;
+}
+
+.overflow .item {
+	width: 284px;
+}
+
+.overflow .title {
+	width: 258px;
+}
+
+.overflow .item:hover .title {
+	width: 240px;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #06f;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,5,0.5);
+}
