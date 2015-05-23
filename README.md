@@ -9,16 +9,16 @@ You can ONLY install from [HERE](https://chrome.google.com/webstore/detail/list-
 
 ## Snapshot
 ### List Tabs
-![List Tabs](/snapshot/list_tabs.png)
+![List Tabs](/snapshot/list_tabs.jpg)
 
 ### Search Tabs
-![Search Tabs](/snapshot/search_tabs.png)
+![Search Tabs](/snapshot/search_tabs.jpg)
 
 ### Rearrange a Tab
-![Rearrange a Tab](/snapshot/rearrange_tab.png)
+![Rearrange a Tab](/snapshot/rearrange_tab.jpg)
 
 ### Close a Tabs
-![Close a Tabs](/snapshot/close_tab.png)
+![Close a Tabs](/snapshot/close_tab.jpg)
 
 ## License
 "List Opened Tabs" is released under the GPLv3.
