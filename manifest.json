@@ -1,7 +1,8 @@
 {
+	"manifest_version": 2,
 	"name": "List Opened Tabs",
 	"version": "1.0",
-	"description": "An extension for list, search, rearrange, close tabs and switch to another tab in the same window.",
+	"description": "An extension for list, search, rearrange, close tabs and switch to another tab.",
 	"icons": {
 		"16": "images/logo_16.png",
 		"32": "images/logo_32.png",
@@ -17,5 +18,7 @@
 		"tabs",
 		"chrome://favicon/"
 	],
-	"manifest_version": 2
+	"web_accessible_resources": [
+		"images/*"
+	]
 }
