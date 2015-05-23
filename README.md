@@ -1,5 +1,5 @@
 # List Opened Tabs
-"List Opened Tabs" is a Google Chrome extension.
+"List Opened Tabs" is a Google Chrome extension.  
 You can list, search, rearrange, close tabs and switch to another tab with this extension.
 
 ## License
