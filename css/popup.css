@@ -11,13 +11,15 @@ body {
 
 #main {
 	width: 288px;
+	margin-top: 22px;
 }
 
 #search {
+	position: fixed;
+	top: 0px;
 	width: 284px;
 	border: 1px solid #abc;
 	padding: 2px 1px;
-	margin-bottom: 1px;
 }
 
 #search:focus {
