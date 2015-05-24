@@ -4,21 +4,36 @@
 # Chrome Developer Dashboard can only accept
 # zip format, not crx format.
 
-if [ $# -ne 1 ]; then
-	echo "Usage: $0 <new tag name>"
+if [ $# -eq 0 ]; then
+	read -p "Package files without create a git tag before? [y/N] "
+	if [ ${REPLY^^} != "Y" ]; then
+		echo "Do nothing..."
+		exit 0
+	fi
+elif [ $# -eq 1 ]; then
+	tag=$1
+	git tag -s $tag -m "$tag released"
+	if [ $? -ne 0 ]; then
+		exit 2
+	else
+		read -p "Push git tag \"$tag\" before? [y/N] "
+		if [ ${REPLY^^} = "Y" ]; then
+			git push origin $tag
+		fi
+	fi
+else
+	echo "Usage: $0 [<new tag name>]"
 	exit 1
-fi
-
-tag=$1
-git tag -s $tag -m "$tag released"
-if [ $? -ne 0 ]; then
-	exit 2
 fi
 
 path=`pwd`
 fd=`basename $path`
 dt=`date +%F`
-fn="$fd"_"$tag"_"$dt"
+if [ $tag ]; then
+	fn="$fd"_"$tag"_"$dt"
+else
+	fn="$fd"_"$dt"
+fi
 
 # Create zip file
 cd ..
