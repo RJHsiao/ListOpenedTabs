@@ -109,7 +109,7 @@ function anim() {
 		opacity: .7,
 		distance: 5,
 		scroll: false,
-		containment: 'document',
+		containment: 'parent',
 		axis: 'y',
 		items: '.item',
 		cancel: '.close',

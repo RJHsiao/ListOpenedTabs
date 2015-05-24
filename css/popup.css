@@ -11,14 +11,14 @@ body {
 
 #main {
 	width: 288px;
-	margin-top: 22px;
 }
 
 #search {
-	position: fixed;
-	top: 0px;
+	display: block;
 	width: 284px;
 	border: 1px solid #abc;
+	margin-top: 1px;
+	margin-bottom: 4px;
 	padding: 2px 1px;
 }
 
@@ -29,7 +29,6 @@ body {
 
 .item {
 	width: 286px;
-	float: left;
 	clear: both;
 	padding-top: 3px;
 	padding-bottom: 3px;
@@ -62,15 +61,18 @@ body {
 	border-color: #06f !important;
 }
 
+.item * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
 img {
-	float: left;
 	width: 16px;
 	height: 16px;
 	margin: 0 5px;
 }
 
 .title {
-	float: left;
 	width: 260px;
 	overflow-x: hidden;
 	white-space: nowrap;
@@ -78,13 +80,13 @@ img {
 }
 
 .close {
-	float: left;
 	text-align: center;
+	vertical-align: baseline;
 	width: 12px;
 	font: bold 12px verdana, sans-serif;
-	margin-top: 1px;
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-top: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
 	padding-bottom: 1px;
 	display: none;
 	border-radius: 12px;
@@ -116,7 +118,7 @@ img {
 	width: 242px;
 }
 .item:hover .close {
-	display: block;
+	display: initial;
 }
 
 .overflow #search {
