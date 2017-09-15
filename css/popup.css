@@ -51,8 +51,8 @@ body {
 }
 
 .selected {
-	background: rgba(0, 127, 255, 0.9) !important;
-	border-color: rgba(0, 127, 255, 0.9) !important;
+	background: rgba(0, 255, 127, 0.9) !important;
+	border-color: rgba(0, 255, 127, 0.9) !important;
 	color: #fff !important;
 }
 
