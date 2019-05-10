@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"name": "List Opened Tabs-insaner",
+	"name": "List Opened Tabs",
 	"version": "1.0.1",
 	"description": "An extension for list, search, rearrange, close tabs and switch to another tab.",
 	"icons": {
