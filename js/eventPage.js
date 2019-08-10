@@ -2,14 +2,11 @@
 
 function updateIcon(tabId, changeInfo, tab) {
     chrome.tabs.query({currentWindow: true},
-    // chrome.tabs.query({},
-        function(tabs){
-
-            var ntabs = tabs.length;
-
-            var ntabs_str = ntabs.toString();
-		    chrome.browserAction.setBadgeText({text: ntabs_str});
-        });
+    function(tabs){
+        var ntabs = tabs.length;
+        var ntabs_str = ntabs.toString();
+	chrome.browserAction.setBadgeText({text: ntabs_str});
+    });
 }
 
 chrome.tabs.onCreated.addListener(updateIcon);
