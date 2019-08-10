@@ -21,7 +21,6 @@
 	"web_accessible_resources": [
 		"images/*"
 	],
-
 	"background": {
 		"scripts": ["js/eventPage.js"],
 		"persistent": false
