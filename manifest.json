@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "List Opened Tabs",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "An extension for list, search, rearrange, close tabs and switch to another tab.",
 	"icons": {
 		"16": "images/logo_16.png",
