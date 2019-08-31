@@ -41,8 +41,8 @@ body {
 }
 
 .item:hover, .item:focus {
-	background: #39f;
-	border-color: #39f;
+	background: #ddd;
+	border-color: #ddd;
 	outline: 0;
 }
 
