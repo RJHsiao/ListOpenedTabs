@@ -15,11 +15,13 @@ body {
 
 #search {
 	display: block;
-	width: 356px;
+	width: 344px;
+	height: 16px;
 	border: 1px solid #abc;
-	margin-top: 1px;
-	margin-bottom: 4px;
-	padding: 2px 1px;
+	margin: 3px;
+	padding: 4px;
+	position: sticky;
+	top: 0px;
 }
 
 #search:focus {
@@ -119,10 +121,6 @@ img {
 }
 .item:hover .close {
 	display: initial;
-}
-
-.overflow #search {
-	width: 354px;
 }
 
 .overflow .item {
