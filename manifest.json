@@ -1,7 +1,7 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "List Opened Tabs",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "An extension for list, search, rearrange, close tabs and switch to another tab.",
 	"icons": {
 		"16": "images/logo_16.png",
@@ -9,20 +9,21 @@
 		"64": "images/logo_64.png",
 		"128": "images/logo_128.png"
 	},
-	"browser_action": {
+	"action": {
 		"default_title": "List Opened Tabs",
 		"default_icon": "images/logo_32.png",
 		"default_popup": "popup.html"
 	},
 	"permissions": [
-		"tabs",
-		"chrome://favicon/"
+		"tabs"
 	],
 	"web_accessible_resources": [
-		"images/*"
+		{
+			"resources": ["images/*"],
+			"matches": ["<all_urls>"]
+		}
 	],
 	"background": {
-		"scripts": ["js/eventPage.js"],
-		"persistent": false
+		"service_worker": "js/eventPage.js"
 	}
 }

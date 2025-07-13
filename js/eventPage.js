@@ -1,12 +1,9 @@
 // added from "chrome tab count"
 
-function updateIcon(tabId, changeInfo, tab) {
-    chrome.tabs.query({currentWindow: true},
-    function(tabs){
-        var ntabs = tabs.length;
-        var ntabs_str = ntabs.toString();
-	chrome.browserAction.setBadgeText({text: ntabs_str});
-    });
+async function updateIcon() {
+    const tabs = await chrome.tabs.query({ currentWindow: true });
+    const tabCountStr = tabs.length.toString();
+    await chrome.action.setBadgeText({ text: tabCountStr });
 }
 
 chrome.tabs.onCreated.addListener(updateIcon);

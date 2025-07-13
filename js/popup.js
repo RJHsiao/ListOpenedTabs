@@ -167,12 +167,12 @@ function mode() {
 }
 
 $(document).ready(function() {
-	main = document.getElementById('main');
-	if (~navigator.userAgent.indexOf('Macintosh'))
-		document.documentElement.className = 'osx';
-	chrome.tabs.getAllInWindow(null, list);
-	$('#search').focus();
-	onkeydown = onkeypress = mute;
-	mode();
-	setInterval(mode, 50);
+    main = document.getElementById('main');
+    if (~navigator.userAgent.indexOf('Macintosh'))
+        document.documentElement.className = 'osx';
+    chrome.tabs.query({ currentWindow: true }, list);
+    $('#search').focus();
+    onkeydown = onkeypress = mute;
+    mode();
+    setInterval(mode, 50);
 });
