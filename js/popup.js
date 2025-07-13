@@ -1,37 +1,40 @@
 var main, moved = 0;
 
+function getFavIconUrl(tab) {
+	const url = new URL(chrome.runtime.getURL('/_favicon/'));
+	url.searchParams.set('pageUrl', tab.url);
+	url.searchParams.set('size', '16');
+	return url.toString();
+}
+
 // generates the html for the tab list
 function list(tabs) {
 	tabs.forEach(function(tab) {
-		var f = tab.favIconUrl, t = tab.title, u = tab.url;
-		if (!u) u = '';
-		if (!t) t = u;
-		if (!f) f = chrome.runtime.getURL('images/logo_16.png');
+		console.debug(`Processing tab: ${tab.title} (${tab.url})`);
+		const f = getFavIconUrl(tab);
+		const u = tab.url ?? '';
+		const t = !tab.title ? u : tab.title;
 
-		// workaround
-		if (f == 'chrome://theme/IDR_EXTENSIONS_FAVICON') f = 'data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABF0lEQVQoz2P4z4AfMpCgQMfI6LbBZi0mnArCK73f+jyOZMWiQENOU0KHe3N01KuOg/+ZNHg0ZNSZUBSYn7T8aP3B6230y5DX9u8tP5p+suZDURD6IOJV1Mu4FynPE19Ev4x85fvmPweKgrj76c8ykWDkKwtOTVUNHriC5atfLNy2Nf05TEHMS9d9Fh9M98IVvLb5z7c5IOEFTEHy88yrIa+DH8AVmDwy7/BeEwdXkPrsf+3aHXsXwhX4P/V7E/I6+8HpNUCLgAqiX7qw/rf+rwZXkHEj8UXii5aj/1Xv26c+yXwW8SpIAsUX1fvz72c/ir38n8EtO/Fx1Y2ai63yqEEd97/zf///eiDL8X/f/9r/Wf95iI5NALw5DuHmTOHfAAAAAElFTkSuQmCC';
-
-		var li = document.createElement('div');
+		const li = document.createElement('div');
 		li.tabIndex = 0;
 		li.className = 'item' + (tab.selected ? ' selected' : '');
 
-		var favicon = document.createElement('img');
-		if (f) favicon.src = f;
-		if (u) favicon.title = u;
+		const favicon = document.createElement('img');
+		favicon.src = f;
+		favicon.title = u;
+		li.appendChild(favicon);
 
-		var title = document.createElement('div');
+		const title = document.createElement('div');
 		title.className = 'title';
 		if (t.length > 38)
 			title.title = t;
 		title.textContent = t;
+		li.appendChild(title);
 
-		var close = document.createElement('div');
+		const close = document.createElement('div');
 		close.className = 'close';
 		close.title = 'Close Tab';
 		close.textContent = 'x';
-
-		li.appendChild(favicon);
-		li.appendChild(title);
 		li.appendChild(close);
 
 		li.tabId = tab.id;
