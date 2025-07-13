@@ -31,11 +31,13 @@ function list(tabs) {
 		title.textContent = t;
 		li.appendChild(title);
 
-		const close = document.createElement('div');
-		close.className = 'close';
-		close.title = 'Close Tab';
-		close.textContent = 'x';
-		li.appendChild(close);
+		if (!tab.pinned) {
+			const close = document.createElement('div');
+			close.className = 'close';
+			close.title = 'Close Tab';
+			close.textContent = 'x';
+			li.appendChild(close);
+		}
 
 		li.tabId = tab.id;
 		li.url = u;
