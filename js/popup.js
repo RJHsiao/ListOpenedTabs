@@ -9,7 +9,7 @@ function getFavIconUrl(tab) {
 
 // generates the html for the tab list
 function list(tabs) {
-	tabs.forEach(function(tab) {
+	tabs.forEach(tab => {
 		console.debug(`Processing tab: ${tab.title} (${tab.url})`);
 		const f = getFavIconUrl(tab);
 		const u = tab.url ?? '';
@@ -18,6 +18,17 @@ function list(tabs) {
 		const li = document.createElement('div');
 		li.tabIndex = 0;
 		li.className = 'item' + (tab.selected ? ' selected' : '');
+
+		const group = document.createElement('div');
+		group.className = 'group';
+		if (tab.groupId != chrome.tabGroups.TAB_GROUP_ID_NONE) {
+			chrome.tabGroups.get(tab.groupId).then(groupInfo => {
+				console.debug(`Tab group info: ${JSON.stringify(groupInfo)}`);
+				group.style.backgroundColor = groupInfo.color;
+				group.title = groupInfo.title;
+			})
+		}
+		li.appendChild(group);
 
 		const favicon = document.createElement('img');
 		favicon.src = f;

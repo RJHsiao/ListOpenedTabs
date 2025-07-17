@@ -1,5 +1,6 @@
 div, img {
 	-webkit-user-select: none;
+	user-select: none;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
 #search:focus {
 	outline: 2px solid #adf;
 	-webkit-box-shadow: 0 0 3px #adf;
+	box-shadow: 0 0 3px #adf;
 }
 
 .item {
@@ -40,6 +42,8 @@ body {
 	border-radius: 2px;
 	-webkit-transition: .2s ease-out;
 	-webkit-transition-property: background-color, border-color;
+	transition: .2s ease-out;
+	transition-property: background-color, border-color;
 }
 
 .item:hover, .item:focus {
@@ -68,6 +72,14 @@ body {
 	vertical-align: middle;
 }
 
+.group {
+	width: 4px;
+	height: 16px;
+	padding: 0px;
+	margin: 0px;
+	background-color: transparent;
+}
+
 img {
 	width: 16px;
 	height: 16px;
@@ -75,7 +87,7 @@ img {
 }
 
 .title {
-	width: 332px;
+	width: 328px;
 	overflow-x: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -117,7 +129,7 @@ img {
 }
 
 .item:hover .title {
-	width: 314px;
+	width: 310px;
 }
 .item:hover .close {
 	display: initial;
@@ -128,9 +140,9 @@ img {
 }
 
 .overflow .title {
-	width: 330px;
+	width: 326px;
 }
 
 .overflow .item:hover .title {
-	width: 312px;
+	width: 308px;
 }
